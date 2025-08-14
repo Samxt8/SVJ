@@ -1,15 +1,82 @@
 :root {
-  --color-título: #0077b6;
-  --color-sub: #00b4d8;
-  --color-texto: #000000;
+    --primary-color: #03045e;
+    --accent-color: #00b4d8;
+    --dark-color: #000000;
+    --light-color: #ffffff;
+    --bright-color: #caf0f8;
+    --transition: all 0.3s ease;
 }
 
+/* Estilos Generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-color);
+    overflow-x: hidden;
+}
 
+.section-title {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
 
-.header-section {  
+.divider {
+    height: 4px;
+    width: 60px;
+    background-color: var(--accent-color);
+    margin: 0 auto 2rem;
+}
+
+/* Navbar */
+.navbar {
+    background-color: transparent;
+    transition: var(--transition);
+    padding: 1rem 0;
+}
+
+.navbar.scrolled {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 0.7rem 0;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--light-color);
+}
+
+.navbar-brand span {
+    color: var(--accent-color);
+}
+
+.navbar-nav .nav-link {
+    color: var(--light-color);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: var(--transition);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: var(--accent-color);
+}
+
+.navbar-toggler {
+    border: none;
+    color: var(--light-color);
+    font-size: 1.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Header / Portada */
+.header-section {
     height: 120vh;
     min-height: 600px;
-    background-image: url('../images/fondo.jpg');
+    background-image: url('../../images/fondo.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -18,44 +85,90 @@
 }
 
 .header-section .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, rgba(30, 29, 69, 0.9), rgba(0, 0, 0, 0.8));
-  z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(51, 46, 182, 0.9), rgba(0, 0, 0, 0.8));
 }
 
 .header-content {
-  position: relative;
-  z-index: 1;  /* contenido encima del overlay */
+    position: relative;
+    z-index: 1;
 }
 
-
-/* Título principal del hero */
 .header-content .h1 {
-  font-size: 3rem;
-    color: var(--color-título);
-  font-weight: bold;       
-}
-
-/* Subtítulo del hero */
-.header-content .h2 {
-  font-size: 2rem;
-  color: var(--color-sub)
+    color: var(--light-color);
+    font-size: 3.5rem;
 }
 
 .header-content .lead {
-    color: var(--color-texto);
+    color: var(--accent-color);
     font-weight: 500;
 }
 
-
 .btn-outline-light:hover {
-    background-color: var(--color-título);
-    border-color: var(--color-título);
-    color: var(--color-texto);
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--primary-color);
+}
 
-     
+/* Sección Sobre Mí */
+#sobre-mi {
+    background-color: var(--light-color);
+}
+
+#sobre-mi h3 {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    margin: 0 5px;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.personal-info p {
+    margin-bottom: 0.7rem;
+}
+
+.personal-info i {
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
