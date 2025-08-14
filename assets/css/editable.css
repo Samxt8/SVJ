@@ -9,7 +9,7 @@
 .header-section {  
     height: 120vh;
     min-height: 600px;
-    background-image: url('/images/fondo.jpg');
+    background-image: url('../images/fondo.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
