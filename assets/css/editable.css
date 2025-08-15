@@ -62,7 +62,7 @@ body {
     color: var(--accent-color);
 }
 
-.navbar-toggler {
+.navbar-nav .navbar-toggler {
     border: none;
     color: var(--light-color);
     font-size: 1.5rem;
@@ -171,4 +171,89 @@ body {
 .btn-outline-primary:hover {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
+}
+
+/* Fondo animado para sección de Áreas de Interés */
+.bg-light.tech-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/*ajuste de imagen que se pondrá de fondo*/
+.tech-logos-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(to right, 
+        rgba(248, 249, 250, 0.9), 
+        rgba(248, 249, 250, 0.9)), 
+        url('../../images/logos.jpg');
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    opacity: .5;
+    z-index: 1;
+    animation: slideBackground 60s linear infinite;
+}
+
+/* Sección Áreas de Interés */
+.interest-card {
+    background-color: var(--light-color);
+    border-radius: 10px;
+    padding: 2rem;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.interest-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.interest-card .icon-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.interest-card i {
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+.interest-card h4 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.interest-card p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+
+/*generación de animación*/
+@keyframes slideBackground {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/*asegurarse que todos los elementos queden encima de la animación*/
+.bg-light.tech-bg .container {
+    position: relative;
+    z-index: 2;
 }
